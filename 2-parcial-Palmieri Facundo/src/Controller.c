@@ -149,8 +149,13 @@ int controller_sortLibro(LinkedList *pArrayListLibro) {
  */
 int controller_saveAsText(char *path, LinkedList *pArrayListLibro) {
 	int retorno = -1;
-	int auxCantLink, auxId, auxPrecio, auxEditorialId;
-	char auxTitulo[128], auxAutor[128], auxEditorial[128];
+	int auxCantLink;
+	int auxId;
+	int auxPrecio;
+	int auxEditorialId;
+	char auxTitulo[128];
+	char auxAutor[128];
+	char auxEditorial[128];
 	FILE *pFile;
 	eLibro *pAuxLibro = NULL;
 	if (path != NULL && pArrayListLibro != NULL) {
