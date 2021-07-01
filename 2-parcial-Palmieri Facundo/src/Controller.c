@@ -12,12 +12,12 @@ int controller_loadFromText(char *path, LinkedList *pArrayListLibro) {
 	FILE *pArchivoTexto;
 	pArchivoTexto = fopen(path, "r");
 	if (pArchivoTexto == NULL) {
-		printf("Este archivo no existe");
+		printf("Este archivo no existe\n");
 	} else {
 		auxParser = parser_LibroFromText(pArchivoTexto,pArrayListLibro);
 		if (auxParser == 0) {
 			fclose(pArchivoTexto);
-			printf("Se lleyo correctamenta el archivo, y se cerro\n");
+			printf("Se el archivo, y se cerro\n");
 			retorno = 0;
 		}
 	}

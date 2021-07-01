@@ -419,26 +419,35 @@ LinkedList* ll_clone(LinkedList *this) {
  */
 int ll_sort(LinkedList *this, int (*pFunc)(void*, void*), int order) {
 	int returnAux = -1;
-	void *aux = NULL;
-	void *aux2 = NULL;
-	if (this != NULL && pFunc != NULL && (order == 0 || order == 1)) {
+	void *paraUno = NULL;
+	void *paraDos = NULL;
+
+	if (this != NULL && (order == 0 || order == 1) && pFunc != NULL) {
+
 		for (int i = 0; i < ll_len(this) - 1; i++) {
 			for (int j = i + 1; j < ll_len(this); j++) {
-				aux = ll_get(this, i); //pElementA
-				aux2 = ll_get(this, j); //pElementB
-				if (((pFunc((aux), (aux2)) > 0) && order == 1)
-						|| ((pFunc((aux), (aux2)) < 0) && order == 0)) {
-					ll_set(this, j, aux); //pElementA
-					ll_set(this, i, aux2); //pElementB
-				}
+				paraUno = ll_get(this, i);
+				paraDos = ll_get(this, j);
+				if (order == 1) {
+					if ((*pFunc)(paraUno, paraDos) > 0) {
+						ll_set(this, j, paraUno);
+						ll_set(this, i, paraDos);
+					}
+				} else {
+					if ((*pFunc)(paraUno, paraDos) < 0) {
+						ll_set(this, j, paraUno);
+						ll_set(this, i, paraDos);
 
+					}
+				}
 			}
+
 		}
 		returnAux = 0;
 	}
 	return returnAux;
-
 }
+
 LinkedList* ll_map(LinkedList *this, void (*pFunc)(void *element)) {
 	void *aux = NULL;
 	if (this != NULL && pFunc != NULL) {
