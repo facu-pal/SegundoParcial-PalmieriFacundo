@@ -42,6 +42,6 @@ int libro_IdToEditorial(int id, char* editorialIdStr);
 void libro_print(eLibro* this);
 
 int libro_sortAutor(void* thisOne, void* thisTwo);
-void libro_putDescuento(void* this);
+void libro_ponerDescuento(void* this);
 
 #endif /* LIBRO_H_ */

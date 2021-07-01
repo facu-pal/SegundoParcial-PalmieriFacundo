@@ -13,7 +13,7 @@ int controller_printLibro(LinkedList* pArrayListLibro);
 int controller_sortLibro(LinkedList* pArrayListLibro);
 int controller_saveAsText(char* path , LinkedList* pArrayListLibro);
 int controller_getMaxId(LinkedList* pArrayListLibro);
-int controller_putDescuentoLibro(LinkedList* pArrayListLibro);
+int controller_ponerDescuentoLibro(LinkedList* pArrayListLibro);
 
 
 #endif /* CONTROLLER_H_ */

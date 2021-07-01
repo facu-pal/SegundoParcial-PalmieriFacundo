@@ -237,7 +237,7 @@ int libro_sortAutor(void *thisOne, void *thisTwo) {
 	return retorno;
 }
 
-void libro_putDescuento(void* this)
+void libro_ponerDescuento(void* this)
 {
 	int auxId, auxPrecio;
 	if( libro_getEditorialId((eLibro*)this, &auxId)==0 && libro_getPrecio((eLibro*)this, &auxPrecio)==0 )
@@ -259,11 +259,8 @@ void libro_putDescuento(void* this)
 			}
 			break;
 		case 3: //person
-			break;
 		case 4: // minotauro
-			break;
 		case 5: // salamandra
-			break;
 		case 6: // pinguns
 			break;
 		}

@@ -64,7 +64,7 @@ int main(void) {
 				break;
 			case 4:
 				if (flag == 1) {
-					controller_putDescuentoLibro(eLibros);
+					controller_ponerDescuentoLibro(eLibros);
 					if(utn_getConfirm()==0){
 						controller_printLibro(eLibros);
 					}

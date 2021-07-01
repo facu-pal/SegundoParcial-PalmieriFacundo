@@ -180,11 +180,11 @@ int controller_saveAsText(char *path, LinkedList *pArrayListLibro) {
 	return retorno;
 }
 
-int controller_putDescuentoLibro(LinkedList *pArrayListLibro) {
+int controller_ponerDescuentoLibro(LinkedList *pArrayListLibro) {
 	int retorno = -1;
 	void (*pFunc)(void *element);
 	if (pArrayListLibro != NULL) {
-		pFunc = libro_putDescuento;
+		pFunc = libro_ponerDescuento;
 		ll_map(pArrayListLibro, pFunc);
 	}
 	return retorno;
